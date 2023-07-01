@@ -35,6 +35,8 @@ public class RestTemplateController {
     }
 
     @GetMapping("/exchange-call")
+    //서버에서 !헤더에! 키(Authorization)로 값을 보내줄거임 그럼 나는 token으로 사용하는 것
+    //걍 헤더에 Authorization에 들어있는 값을 가져온다는 뜻
     public List<ItemDto> exchangeCall(@RequestHeader("Authorization") String token) {
         return restTemplateService.exchangeCall(token);
     }
